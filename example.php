@@ -18,9 +18,8 @@
   
   $dizin = (__DIR__ . DIRECTORY_SEPARATOR);
 	$java_dosyasi=$dizin."Java/NTG_UBLTR_Schematron.jar";
-	$ubl_dosyasi=$dizin."ubl/schematron/UBL-TR_Main_Schematron.xml";
-	$fatura_dosyasi=$dizin."TemelFaturaOrnegi.xml";
-	$xsd_dosyasi=$dizin."ubl/xml/PackageProxy_1_2.xsd";
+	$ubl_dosyasi=$dizin."schematron/UBL-TR_Main_Schematron.xml";
+	$fatura_dosyasi=$dizin."TemelFatura.xml";
 		
 	$cikti = ublKontrol($java_dosyasi, $ubl_dosyasi, $fatura_dosyasi);
 	
