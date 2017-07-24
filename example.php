@@ -40,7 +40,7 @@
 	if(count($cikti) > 0)
 	{
 		foreach($cikti as $ciktiSonuc)
-			echo $ciktiSonuc.'<br />';
+			echo $ciktiSonuc . '<br />';
 	}
 	else echo 'Hata Yok...';
 ?>
