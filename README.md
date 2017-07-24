@@ -1,7 +1,7 @@
-PHP için UBL-TR Schematron ///
-=====================
-E-Fatura UBL-TR Schematron Doğrulama Örneği içermektedir. http://netgenel.net - http://phpkf.com<br />
-Bu Java yazılımı http://kodcu.com 'un "Schematron-Validation" isimli örneğinden derlenmiştir.
+PHP için UBL-TR Schematron<br />
+=====================<br />
+E-Fatura UBL-TR Schematron Doğrulama Örneği içermektedir. http://netgenel.net - http://phpkf.com<br /><br />
+Bu Java yazılımı http://kodcu.com 'un "Schematron-Validation" isimli örneğinden derlenmiştir.<br /><br />
 
 <pre>
 &lt;?php 
