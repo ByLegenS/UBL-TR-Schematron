@@ -1,0 +1,1 @@
+Java yardımı ile kontrol ettiğiniz Schematron dosyasının düzgün çalışması için UBL-TR_Main_Schematron.xml - UBL-TR_Common_Schematron.xml - UBL-TR_Codelist.xml dosyalarını örnek dosyadaki gibi birleştirmeniz gerekiyor, aksi halde hata alabilirsiniz.
