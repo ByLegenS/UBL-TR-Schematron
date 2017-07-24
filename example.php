@@ -32,15 +32,15 @@
 
 	$dizin = (__DIR__ . DIRECTORY_SEPARATOR);
 	$java_dosyasi=$dizin."Java/NTG_UBLTR_Schematron.jar";
-	$ubl_dosyasi=$dizin."ubl/schematron/UBL-TR_Main_Schematron.xml";
-	$fatura_dosyasi=$dizin.$dosya_adi;
+	$ubl_dosyasi=$dizin."schematron/UBL-TR_Main_Schematron.xml";
+	$fatura_dosyasi='TemelFaturaOrnegi.xml';
 
-	$cikti = $XMLImza->UBLTesti($java_dosyasi, $ubl_dosyasi, $fatura_dosyasi, true);
+	$cikti = UBLTesti($java_dosyasi, $ubl_dosyasi, $fatura_dosyasi, true);
 
 	if(count($cikti) > 0)
 	{
 		foreach($cikti as $ciktiSonuc)
-			echo $ciktiSonuc . '<br />';
+			echo $ciktiSonuc.'<br />';
 	}
 	else echo 'Hata Yok...';
 ?>
