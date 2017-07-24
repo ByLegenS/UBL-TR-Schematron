@@ -1,9 +1,12 @@
 <?php 
 
-	function ublKontrol($java_dosyasi, $ubl_dosyasi, $fatura_dosyasi)
+	/* UBL Kontrolü */
+	function UBLTesti($java_dosyasi, $ubl_dosyasi, $fatura_dosyasi, $return=false)
 	{
+		/* Java Dosyasına Veri Yollanıyor */
 		exec("java -Dfile.encoding=UTF8 -jar $java_dosyasi $ubl_dosyasi $fatura_dosyasi 2>&1", $cikti);
 
+		/* Önemsiz Hatalar Temizleniyor */
 		foreach($cikti as $anahtar => $deger)
 		{
 			if(stristr($deger, 'The child axis starting') == true)
@@ -12,19 +15,32 @@
 				unset($cikti[$anahtar]);
 		}
 
-		if(count($cikti) > 0) return $cikti;
-		else return false;
+		/* Hatalar Ekrana Yazdırılıyor */			
+		if($return == false)
+		{
+			if(count($cikti) > 0)
+			{
+				foreach($cikti as $ciktiSonuc)
+					echo $ciktiSonuc.'<br />';
+				exit();
+			}
+		}
+		else return $cikti;
 	}
+	/* UBL Kontrolü */
+
 
 	$dizin = (__DIR__ . DIRECTORY_SEPARATOR);
 	$java_dosyasi=$dizin."Java/NTG_UBLTR_Schematron.jar";
-	$ubl_dosyasi=$dizin."schematron/UBL-TR_Main_Schematron.xml";
-	$fatura_dosyasi=$dizin."TemelFatura.xml";
+	$ubl_dosyasi=$dizin."ubl/schematron/UBL-TR_Main_Schematron.xml";
+	$fatura_dosyasi=$dizin.$dosya_adi;
 
-	$cikti = ublKontrol($java_dosyasi, $ubl_dosyasi, $fatura_dosyasi);
+	$cikti = $XMLImza->UBLTesti($java_dosyasi, $ubl_dosyasi, $fatura_dosyasi, true);
 
-	echo '<pre>';
-	print_r($cikti);
-	echo '</pre>';
-
+	if(count($cikti) > 0)
+	{
+		foreach($cikti as $ciktiSonuc)
+			echo $ciktiSonuc.'<br />';
+	}
+	else echo 'Hata Yok...';
 ?>
