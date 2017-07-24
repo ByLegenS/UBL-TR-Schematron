@@ -37,7 +37,7 @@ Bu Java yazılımı http://kodcu.com 'un "Schematron-Validation" isimli örneği
 
 	$dizin = (__DIR__ . DIRECTORY_SEPARATOR);
 	$java_dosyasi=$dizin."Java/NTG_UBLTR_Schematron.jar";
-	$ubl_dosyasi=$dizin."schematron/UBL-TR_Main_Schematron.xml";
+	$ubl_dosyasi=$dizin."Schematron/UBL-TR_Main_Schematron.xml";
 	$fatura_dosyasi='TemelFaturaOrnegi.xml';
 
 	$cikti = UBLTesti($java_dosyasi, $ubl_dosyasi, $fatura_dosyasi, true);
