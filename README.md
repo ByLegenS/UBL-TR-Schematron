@@ -51,4 +51,4 @@ Bu Java yazılımı http://kodcu.com 'un "Schematron-Validation" isimli örneği
 ?&gt;
 </pre>
 
-Açıklamalar : http://yucelkahraman.com.tr/php/java-e-fatura-ubl-tr-schematron-dogrulama.html
+Açıklamalar : http://yucelkahraman.com.tr/java-e-fatura-ubl-tr-schematron-dogrulama.html
