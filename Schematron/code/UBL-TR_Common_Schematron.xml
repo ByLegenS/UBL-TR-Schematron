@@ -164,7 +164,7 @@
 		
 		<!-- Rule to validate issue date -->
 		<sch:rule abstract="true" id="TimeCheck">
-			<sch:assert test="xs:date(.) le xs:date(current-date())">Geçersiz cbc:IssueDate değeri : '<sch:value-of select="."/>' cbc:IssueDate alanı günün tarihinden ileri bir tarih olamaz</sch:assert>
+			<sch:assert test="xs:date(adjust-dateTime-to-timezone(xs:dateTime(concat(., 'T00:00:00')), xs:dayTimeDuration('PT3H'))) le xs:date(adjust-dateTime-to-timezone(current-dateTime(), xs:dayTimeDuration('PT3H')))">Geçersiz cbc:IssueDate değeri : '<sch:value-of select="."/>' cbc:IssueDate alanı günün tarihinden ileri bir tarih olamaz</sch:assert>
 			<sch:assert test="xs:date('2005-01-01+04:00')  le xs:date(.)">Geçersiz cbc:IssueDate değeri : '<sch:value-of select="."/>' cbc:IssueDate alanı 01.01.2005 tarihinden önce bir tarih olamaz</sch:assert>
 		</sch:rule>
 
