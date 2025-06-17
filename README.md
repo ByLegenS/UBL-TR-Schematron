@@ -50,5 +50,3 @@ Bu Java yazılımı http://kodcu.com 'un "Schematron-Validation" isimli örneği
 	else echo 'Hata Yok...';
 ?&gt;
 </pre>
-
-Açıklamalar : http://yucelkahraman.com.tr/java-e-fatura-ubl-tr-schematron-dogrulama.html
